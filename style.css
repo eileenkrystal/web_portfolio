@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #39463A;
+    color: #ededed;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s
+}
+
+.navbar a.active {
+    color: #8f8477;
+
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+
+.home-content {
+    max-width: 600px;
+
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #C1AA90;
+}
+
+.home-content p {
+    font-size: 16px;
+    margin: 20px 0 40px;
+}
+
+.home-content .btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #C1AA90;
+    border: 2px solid #C1AA90;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29; /* Ensures text remains visible */
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn-box a:hover {
+    color: white; /* Keeps text visible on hover */
+}
+
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: #C1AA90;
+    border: 2px solid #C1AA90;
+}
+
+.btn-box a:nth-child(2):hover {
+    background: #C1AA90;
+    color: #C1AA90;
+}
+
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #615242; /* button color for projects and get in touch */
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+
+.home-sci {
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #C1AA90;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #C1AA90; /* Icon color */
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.home-sci a:hover {
+    background: #C1AA90; /* Background changes on hover */
+    color: #39463A; /* Keeps icon visible */
+}
+
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent; /* Remove previous color fill */
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before {
+    background: #C1AA90; /* Smooth hover background effect */
+}
+
+
+.about-container {
+    display: flex;
+    align-items: flex-start; /* Aligns text and images at the top */
+    gap: 50px; /* Space between text and images */
+    padding: 80px 10%;
+    background: #39463A;
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.about-text {
+    flex: 1; /* Allows text to take available space */
+    max-width: 600px; /* Prevents text from being too wide */
+    color: #C1AA90;
+    text-align: left; /* Left-aligns text */
+}
+
+.about-text h2 {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-images {
+    display: flex;
+    flex-direction: column; /* Stacks images vertically */
+    gap: 20px; /* Space between images */
+    max-width: 50%; /* Makes sure images take up significant space */
+    flex-shrink: 0; /* Prevents images from shrinking */
+}
+
+.about-images img {
+    width: 100%; /* Makes images take up full container width */
+    height: 300px; /* Makes images larger to fill space */
+    border-radius: 12px; /* Soft rounded corners */
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3); /* Adds depth */
+    object-fit: cover; /* Ensures images don’t get distorted */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Slight zoom effect on hover */
+.about-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .about-text {
+        max-width: 90%; /* Expands text on smaller screens */
+        text-align: center;
+    }
+
+    .about-images {
+        max-width: 80%; /* Keeps images balanced on smaller screens */
+    }
+}
+
+.projects {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #C1AA90;
+    margin-bottom: 10px;
+}
+
+.projects p {
+    font-size: 18px;
+    color: #ededed;
+    margin-bottom: 30px;
+}
+
+.works {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.work-item {
+    background: #2e3b2f;
+    border-radius: 12px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    width: 400px;  /* Increased Width */
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    max-width: 400px; /* Larger Image */
+    max-height: 300px; /* Maintains Aspect Ratio */
+    border-radius: 12px 12px 0 0;
+    object-fit: cover;
+}
+
+.work-item p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #C1AA90;
+    margin: 15px 0;
+}
+
+
+.work-item a {
+    text-decoration: none;
+    color: #C1AA90;
+    transition: color 0.3s;
+}
+
+.work-item a:hover {
+    color: white;
+}
+
+.work-item:hover {
+    transform: scale(1.05);
+}
